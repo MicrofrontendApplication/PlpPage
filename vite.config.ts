@@ -1,28 +1,26 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import federation from '@originjs/vite-plugin-federation'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import federation from "@originjs/vite-plugin-federation";
 
 export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: 'plppage',
-      filename: 'remoteEntry.js',
+      name: "plppage",
+      filename: "remoteEntry.js",
       exposes: {
-        './PlpPage': './src/App.tsx',
+        "./PlpPage": "./src/App.tsx",
       },
       shared: ['react', 'react-dom', 'react-router-dom'],
     }),
   ],
   server: {
-    cors: true
+    cors: true,
   },
   build: {
-
     modulePreload: false,
-    target: 'esnext',
+    target: "esnext",
     minify: false,
     // cssCodeSplit: true
-
-  }
-})
+  },
+});

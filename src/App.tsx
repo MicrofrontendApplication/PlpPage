@@ -7,7 +7,9 @@ function App() {
 
   return (
     <>
-     <PlpPage></PlpPage>
+      {/* <PlpPage /> */}
+
+      <p>This is plp page </p>
     </>
   )
 }
