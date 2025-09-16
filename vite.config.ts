@@ -11,7 +11,7 @@ export default defineConfig({
       exposes: {
         "./PlpPage": "./src/App.tsx",
       },
-      shared: ['react', 'react-dom', 'react-router-dom'],
+      shared: ['react', 'react-dom', 'react-router-dom','react-redux','@reduxjs/toolkit'],
     }),
   ],
   server: {
