@@ -32,8 +32,8 @@ const PlpPage: React.FC = () => {
 
     fetchProducts();
   }, []);
-  const handelClick = () => {
-    navigate("/checkout.jsp", { state: { productId: 1 } });
+  const handelClick = (productId: number) => {
+    navigate("/checkout.jsp", { state: { productId } });
     window.location.reload(); // Force reload to ensure PlpPage reads the state
   }
   if (loading) return <div className="p-4">Loading products...</div>;
@@ -51,7 +51,7 @@ const PlpPage: React.FC = () => {
                 alt={product.title}
                 className="card-img-top"
                 style={{ height: "200px", objectFit: "cover" }}
-                onClick={handelClick}
+                onClick={() => handelClick(product.id)}
               />
               <div className="card-body">
                 <h5 className="card-title">{product.title}</h5>
